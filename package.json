@@ -5,7 +5,8 @@
   "scripts": {
     "clean": "rm -rf dist",
     "build": "npm run clean && tsc --project tsconfig.build.json && tsc-alias -p tsconfig.build.json",
-    "start": "tsnd --respawn --exit-child -r dotenv/config -r tsconfig-paths/register src/api/server.ts"
+    "dev": "tsnd --respawn --exit-child -r dotenv/config -r tsconfig-paths/register src/api/server.ts",
+    "start": "node -r dotenv/config ./dist/api/server.js"
   },
   "keywords": [],
   "author": "",

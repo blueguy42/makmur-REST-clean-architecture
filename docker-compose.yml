@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  mongodb:
+    container_name: mongodb
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    volumes:
+      - $PWD/mongo-data:/data/db
+  redis:
+    container_name: redis
+    image: redis:alpine
+    ports:
+      - 6379:6379
+    command: redis-server /usr/local/etc/redis/redis.conf
+    volumes:
+      - $PWD/redis.conf:/usr/local/etc/redis/redis.conf
