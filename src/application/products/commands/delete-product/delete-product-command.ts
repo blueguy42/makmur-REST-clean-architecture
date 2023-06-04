@@ -15,7 +15,7 @@ export function makeDeleteProductCommand({ productsRepository }: Pick<Dependenci
     const product = await productsRepository.getById({ id });
 
     if (!product) {
-      throw new NotFoundException(`Product ${id} does does not exist`);
+      throw new NotFoundException(`Product ${id} does not exist`);
     }
 
     await productsRepository.delete({ id });

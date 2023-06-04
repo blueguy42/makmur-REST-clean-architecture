@@ -6,7 +6,7 @@ export async function validate(command: CreateProductCommand) {
   try {
     const schema: Joi.ObjectSchema<CreateProductCommand> = Joi.object({
       code: Joi.string().alphanum().max(12).required(),
-      name: Joi.string().alphanum().max(100).required(),
+      name: Joi.string().pattern(/^[A-Za-z0-9\s]+$/).max(100).required(),
       price: Joi.number().min(0).integer().required(),
       volume: Joi.number().min(0).integer().required(),
     });

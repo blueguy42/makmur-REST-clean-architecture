@@ -16,7 +16,7 @@ export function makeGetProductQuery({ productsRepository }: Pick<Dependencies, '
     const product = await productsRepository.getById({ id });
 
     if (!product) {
-      throw new NotFoundException(`Product ${id} does does not exist`);
+      throw new NotFoundException(`Product ${id} does not exist`);
     }
 
     return toDto(product);
