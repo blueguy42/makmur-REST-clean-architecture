@@ -1,5 +1,5 @@
 type ProductType = {
-    id: string;
+    id?: string;
     code: string;
     name: string;
     price: number;
@@ -11,7 +11,7 @@ type ProductType = {
 };
 
 export class Product {
-    public id: string;
+    public id?: string;
     public code: string;
     public name: string;
     public price: number;
